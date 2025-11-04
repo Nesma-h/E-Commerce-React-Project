@@ -51,3 +51,63 @@ npm run start
 - `npm run start`: Launch `json-server` on `db.json`
 
 ## Project Structure
+```
+app/
+  index.html
+  vite.config.js
+  package.json
+  db.json
+  src/
+    main.jsx
+    App.jsx
+    layout/
+      Layout.jsx
+    common/
+      NavBar/ (Topnav, Bottomnav, Navlinks)
+      Footer/
+      LottieHandler.jsx
+      Product/
+    component/
+      Header/, Categories/, DealDay/, HomeProducts/, BestValue/, ShortCart/, ScrollButtons/
+    pages/
+      Home/, Shop/, Cart/, Wishlist/, Compare/, About/, Contact/
+      Auth/ (Login.jsx, Signup.jsx)
+    context/
+      AuthContext.jsx
+      CartContext.jsx
+      WishlistContext.jsx
+      CompareContext.jsx
+      DisplayContext.jsx
+    fireBase/
+      Firebase.js
+    validation/
+      loginValidation.js
+      regiserValidation.js
+    assets/
+      images/, lottifiles/
+```
+
+## How It Works
+- Routing in `src/App.jsx` via `createBrowserRouter` with lazy‑loaded pages and Lottie fallbacks.
+- App shell in `src/layout/Layout.jsx` renders `NavBar`, `Outlet`, and `Footer`.
+- `AuthContext.jsx`:
+  - Registers/logs in users via Firebase Auth
+  - Persists basic user profile to Firestore (`users/<id>`)
+- `CartContext.jsx`:
+  - CRUD against `http://localhost:3000/cart` filtered by `userid` and `productid`
+  - Maintains a local `cart` array from `payload` items
+
+## Notes
+- Run `npm run dev` and `npm run start` in two terminals.
+- If you see a perpetual loading animation, verify Firebase config and that `json-server` is running.
+- Some sections expect images under `src/assets/images/`.
+
+## Build & Deploy
+```bash
+npm run build
+# output in dist/
+```
+- For GitHub Pages or static hosting, serve `dist`. For SPA routing on GH Pages, consider adding a `404.html` redirect.
+
+## License
+Educational/demo use. Feel free to modify and extend.
