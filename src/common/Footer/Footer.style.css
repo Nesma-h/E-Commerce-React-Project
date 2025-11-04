@@ -1,0 +1,10 @@
+.footer-list ul li:hover .right1{
+    display: none;
+}
+.footer-list ul li:hover .right2 {
+    display: block;
+}
+.footer{
+    margin-top: auto;
+    
+}

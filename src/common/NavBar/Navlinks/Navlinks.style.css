@@ -1,0 +1,49 @@
+li:hover .liDiv{
+    color: var(--main-color);
+}
+
+li:hover .down{
+    visibility:visible;
+    height: max-content;
+    top: 100%;
+    bottom:unset;
+    transition: 0.3s;
+    opacity: 1;
+    z-index: 20;
+}
+li .down span:after{
+    content: '';
+    width: 0px;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    background: var(--main-color);
+    height: 3px;
+    transition: 0.4s;
+}
+li .down.down-4{
+    background: url('../../../assets/images/bg.png'),#fff no-repeat ;
+    background-size: cover;
+}
+h6::after{
+    content: '';
+    width: 70px;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    background: var(--main-color);
+    height: 3px;
+    transition: 0.4s;
+}
+li .down span{
+    transition: 0.3s;
+}
+li .down span:hover{
+    letter-spacing: 1px;
+}
+li .down span:hover:after{
+    width: 70px;
+}
+li{
+    cursor: pointer;
+}

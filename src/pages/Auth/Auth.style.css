@@ -1,0 +1,5 @@
+.registerBtn:not(:disabled):hover{
+    background: var(--main-color);
+    color: white; 
+    border:white solid 1px;
+}
