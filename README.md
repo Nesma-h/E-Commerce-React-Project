@@ -1,12 +1,53 @@
-# React + Vite
+# React E‑Commerce UI (Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite e‑commerce UI with Firebase authentication, lightweight state via Context, and a local JSON API (json‑server) for the cart. It includes core pages like Home, Shop, Cart, Compare, Wishlist, Login, and Signup.
 
-Currently, two official plugins are available:
+## Features
+- **Routing & code‑splitting**: `react-router-dom` with `lazy`/`Suspense` and Lottie loading states.
+- **Auth**: Firebase Auth with user profiles stored in Firestore.
+- **Cart (local API)**: `json-server` using `db.json` with per‑user cart items.
+- **UI toolkit**: Tailwind CSS v4, MUI, and `styled-components`.
+- **Feedback**: Toasts via `react-hot-toast` and modals via `sweetalert2`.
+- **Extras**: Wishlist, Compare, Swiper carousels, Framer Motion animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 19 + Vite
+- React Router v7
+- Tailwind CSS 4, MUI, styled-components
+- Firebase (Auth + Firestore)
+- json-server, Axios
+- Zod, React Hook Form
+- Lottie, Swiper, Framer Motion
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1) Install dependencies:
+```bash
+cd app
+npm install
+```
+
+2) Run the React dev server:
+```bash
+npm run dev
+```
+
+3) Start the local API (in a separate terminal):
+```bash
+npm run start
+```
+- Serves at `http://localhost:3000`
+- Cart endpoint: `http://localhost:3000/cart`
+- Ensure `app/db.json` exists (an empty `{}` is fine)
+
+4) Configure Firebase:
+- Add your project config in `src/fireBase/Firebase.js`.
+- Auth flows and `AuthContext` expect Firestore with `users/<id>` documents.
+
+## Available Scripts
+- `npm run dev`: Start Vite dev server
+- `npm run build`: Production build
+- `npm run preview`: Preview the production build
+- `npm run start`: Launch `json-server` on `db.json`
+
+## Project Structure
